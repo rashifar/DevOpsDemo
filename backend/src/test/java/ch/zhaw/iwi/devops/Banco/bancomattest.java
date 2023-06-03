@@ -22,7 +22,7 @@ public class bancomattest {
 
     public void testInitialBalance() {
 
-        assertEquals(1, bancomat.getBalance()); // Überprüft, ob die anfängliche Kontobalance 0 ist
+        assertEquals(0, bancomat.getBalance()); // Überprüft, ob die anfängliche Kontobalance 0 ist
     }
 
     @Test
