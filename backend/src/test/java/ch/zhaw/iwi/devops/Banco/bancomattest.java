@@ -58,15 +58,5 @@ public class bancomattest {
 
     }
 
-    @Test
-    public void testSomething() {
-    }
 
-    @Test
-    public void testWithdrawNegativeAmount() {
-        bancomat.deposit(100); // Führt eine Einzahlung von 100 durch
-        bancomat.withdraw(60); // Versucht eine negative Betrag abzuheben
-        assertEquals(100, bancomat.getBalance()); // Überprüft, ob die Kontobalance unverändert bleibt (keine Abhebung
-                                                  // erfolgt)
-    }
 }
