@@ -58,5 +58,14 @@ public class bancomattest {
 
     }
 
+    @Test
+    public void testSomething() {
+    }
 
+    @Test
+    public void testDepositZeroAmount() {
+        bancomat.deposit(0); // Führt eine Einzahlung von 0 durch
+        assertEquals(0, bancomat.getBalance()); // Überprüft, ob die Kontobalance unverändert bleibt (keine Einzahlung
+                                                // erfolgt)
+    }
 }
