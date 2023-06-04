@@ -52,4 +52,10 @@ public class bancomattest {
         assertEquals(100, bancomat.getBalance()); // Überprüft, ob die Kontobalance unverändert bleibt (keine Abhebung erfolgt)
 
     }
-}
+    @Test
+
+    public void testSomething() {
+
+       
+
+    }}

@@ -13,9 +13,7 @@ import java.util.List;
 
 import java.util.Map;
 
-
-
-
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 
 import org.springframework.context.event.EventListener;
@@ -36,6 +34,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import ch.qos.logback.classic.Logger;
+
 
 
 
@@ -46,12 +46,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ModuleController {
 
 
+    private Map <Integer, Module> modules = new HashMap<Integer, Module>();
 
-
-    private Map<Integer, Module> modules = new HashMap<Integer, Module>();
-
-
-
+    private Logger logger = (Logger) LoggerFactory.getLogger(ModuleController.class);
 
     @EventListener(ApplicationReadyEvent.class)
 
@@ -63,15 +60,14 @@ public class ModuleController {
 
         this.modules.put(3, new Module(3, "Leadership", "Beschreibung 3"));
 
-        System.out.println("Init Data");
+        logger.info("Init Data");
 
     }
 
 
 
 
-
-    @GetMapping("/services/module")
+    @GetMapping("/services/module") 
 
     public List<PathListEntry<Integer>> module() {
 
